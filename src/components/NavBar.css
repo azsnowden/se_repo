@@ -1,0 +1,11 @@
+.navbox{
+    display: flex;
+   background-color: blue;
+}
+.latest{
+    padding: 5px;
+    color: red;
+}
+.search{
+    color: white;
+}

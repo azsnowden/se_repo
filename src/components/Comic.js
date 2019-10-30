@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import '../components/Comic.css'
 
 class Comic extends Component{
 
@@ -28,10 +29,12 @@ class Comic extends Component{
             render(){
                 // const comicIMG = this.state.comicData.results.img[0]
                 const comicIMG = this.state.comicData.img
+                const comicTitle = this.state.comicData.alt
+                const comicAlt = this.state.comicData.title
                 console.log(comicIMG)
                 return(
-                    <div classname="comic">
-                     <img id ="comic_img" alt="shutupreact" src={comicIMG}></img>
+                    <div>
+                     <img id ="comic_img" class="latestImage" comicTitle= {comicTitle} alt={comicAlt} src={comicIMG}></img>
                     </div>
                 )
     }

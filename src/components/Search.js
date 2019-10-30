@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import '../components/Search.css'
 import axios from 'axios'
 
 class Search extends Component{
@@ -13,8 +14,8 @@ class Search extends Component{
     
     handleSubmit(e){
         e.preventDefault();
-        console.log("user clicked something good")
-        const comicNumber = document.querySelector('#search-term').value;
+        console.log("user clickedthe submit button")
+        const comicNumber = document.querySelector('#searchNumber').value;
         console.log(comicNumber)
         const searchUrl = `https://xkcd.now.sh/?comic=${comicNumber}`;
         const movieData = axios.get(searchUrl);
@@ -30,27 +31,58 @@ class Search extends Component{
                 console.log("COmponent Rndered");
                 console.log(this.state.comicData);
                 const comicIMG = this.state.comicData.img
+                const comicTitle = this.state.comicData.alt
+                const comicAlt = this.state.comicData.title
                 console.log(comicIMG)
-    
-                return(
+                
+
+                if(comicIMG != null)
+                {
+                    return(
                     <div className="container">
         
                         <div className="row">
                             <form onSubmit={this.handleSubmit}>
-                                <input id="search-term" type="text" placeholder="Enter a comic number" />
-                                <input type="submit" className="btn" value="Search!" />
+                                <div class="searchBox">
+                                <input id="searchNumber" class="searchInput" type="text" placeholder="Enter a comic number" />
+                                </div>
+                                <div class="searchSubmit">
+                                <input type="submit" class="searchSubmit" value="Search!" />
+                                </div>
                             </form>
                         </div>
-                        <div className = "comic">
-                            <img id = "comic_img" alt="" src ={comicIMG}></img>
+                        <div>
+                            <img id= "comic_img" class="searchImage" title={comicTitle} alt={comicAlt} src ={comicIMG}></img>
                         </div>
         
                         
                     </div>
                 )
+                }
+            else{
+                return(<div className="container">
+        
+            <div className="row">
+                <form onSubmit={this.handleSubmit}>
+                    <div class="searchBox">
+                    <input id="searchNumber" class="searchInput" type="text" placeholder="Enter a comic number" />
+                    </div>
+                    <div class="searchSubmit">
+                    <input type="submit" class="searchSubmit" value="Search!" />
+                    </div>
+                </form>
+            </div>
+            <div>
+                <h1>Search for a Comic!</h1>
+                <h3>Enter a number between 1 and 2220</h3>
+            </div>
+                
+            
+        </div>)
+                }
             }
         }
-
+    
 
 
 

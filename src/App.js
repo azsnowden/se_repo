@@ -11,7 +11,7 @@ function App() {
       <Router>
         <Route path="/" component={NavBar}/>
         <Route exact path ="/" component= {Comic}/>
-        <Route path ="/search" component = {Search}/>
+        <Route exact path ="/search" component = {Search}/>
       </Router>
       
     </div>

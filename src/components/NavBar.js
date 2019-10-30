@@ -1,14 +1,18 @@
 import React, {Component} from 'react';
-import './NavBar.css';
+import '../components/NavBar.css'
 import {Link} from 'react-router-dom';
 
 class NavBar extends Component{
 
     render(){
        return(
-           <div classname="box">
-               <Link to="/">Latest</Link>
-               <Link to="/search">Search</Link>
+           <div classname="navbox">
+               <Link to="/" class="latest">
+                   Latest
+                </Link>
+               <Link to="/search" class ="search">
+                   Search
+                </Link>
            </div>
        )
 

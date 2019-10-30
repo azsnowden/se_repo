@@ -1,0 +1,36 @@
+.searchBox{
+    width:200px;
+    display:flex;
+}
+.searchImage{
+    border: 5px solid black;
+    width:95%;
+        margin: 0px;
+        background: yellow;
+        position: relative;
+        top: 5px;
+        left: 10px;
+}
+.searchInput{
+    position:relative;
+    padding-left:5%;
+    width:100%;
+    height: 20px;
+}
+.searchSubmit{
+    color:pink;
+    float: right;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+}
+
+.container{
+    position:relative;
+    background-color: yellow;
+}
+
+body{
+    background-color:blue;
+}

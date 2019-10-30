@@ -1,0 +1,10 @@
+.latestImage{
+    border: 5px solid black;
+    height: 600px;
+    width:550px;
+        margin: 0px;
+        background: yellow;
+        position: relative;
+        top: 5px;
+        left: 10px;
+}
